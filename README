@@ -1,3 +1,9 @@
+## Initial config
+
+```
+docker compose run --rm freqtrade create-userdir --userdir user_data
+```
+
 ## Start the trader without reset the database
 
 ```
@@ -9,4 +15,18 @@ docker compose up -d
 ```
 docker compose down
 rm -f user_data/tradesv3.* & docker compose up -d
+```
+
+## Stop trader
+
+```
+docker compose down
+```
+
+## Backtesting
+
+First download data:
+
+```
+docker run --rm --volume ./user_data:/freqtrade/user_data freqtradeorg/freqtrade:stable download-data --exchange binance --config /freqtrade/user_data/config.json
 ```
