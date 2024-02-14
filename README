@@ -1,0 +1,12 @@
+## Start the trader without reset the database
+
+```
+docker compose up -d
+```
+
+## Start the trader cleaning the database
+
+```
+docker compose down
+rm -f user_data/tradesv3.* & docker compose up -d
+```
